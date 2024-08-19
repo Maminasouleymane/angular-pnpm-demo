@@ -1,5 +1,4 @@
 pipeline {
-
     agent any
 
     triggers {
@@ -7,9 +6,17 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World !!'
+                def npmInstallStartTime = System.currentTimeMillis()
+                sh 'npm install'
+                def npmInstallTime = System.currentTimeMillis() - npmInstallStartTime
+                echo "npm install took ${npmInstallTime}ms"
+
+                def ngBuildStartTime = System.currentTimeMillis()
+                sh 'ng build'
+                def ngBuildTime = System.currentTimeMillis() - ngBuildStartTime
+                echo "ng build took ${ngBuildTime}ms"
             }
         }
     }
