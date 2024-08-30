@@ -6,18 +6,18 @@ pipeline {
         stage('Build') {
             steps {
                 nodejs('NodeJs') {
-                    echo 'start build'
-                        script {
-                            def npmInstallStartTime = System.currentTimeMillis()
-                            sh 'npm install'
-                            def npmInstallTime = System.currentTimeMillis() - npmInstallStartTime
-                            echo "npm install took ${npmInstallTime}ms"
+                    echo 'building ...'
+                    script {
+                        def npmInstallStartTime = System.currentTimeMillis()
+                        sh 'npm install'
+                        def npmInstallTime = System.currentTimeMillis() - npmInstallStartTime
+                        echo "npm install took ${npmInstallTime}ms"
 
-                            def ngBuildStartTime = System.currentTimeMillis()
-                            sh 'ng build'
-                            def ngBuildTime = System.currentTimeMillis() - ngBuildStartTime
-                            echo "ng build took ${ngBuildTime}ms"
-                        }
+                        def ngBuildStartTime = System.currentTimeMillis()
+                        sh 'npm run build'
+                        def ngBuildTime = System.currentTimeMillis() - ngBuildStartTime
+                        echo "ng build took ${ngBuildTime}ms"
+                    }
                 }
             }
         }
