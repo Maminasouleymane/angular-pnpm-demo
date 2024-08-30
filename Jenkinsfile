@@ -9,7 +9,7 @@ pipeline {
                     echo 'building with npm ...'
                     script {
                         def npmInstallStartTime = System.currentTimeMillis()
-                        sh 'npm install'
+                        sh 'npm install --force'
                         def npmInstallTime = System.currentTimeMillis() - npmInstallStartTime
                         echo "npm install took ${npmInstallTime}ms"
 
