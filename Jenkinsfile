@@ -12,10 +12,10 @@ pipeline {
                         def npmInstallTime = System.currentTimeMillis() - npmInstallStartTime
                         echo "npm install took ${npmInstallTime}ms"
 
-                        def ngBuildStartTime = System.currentTimeMillis()
-                        sh 'npm run build'
-                        def ngBuildTime = System.currentTimeMillis() - ngBuildStartTime
-                        echo "ng build took ${ngBuildTime}ms"
+                        // def ngBuildStartTime = System.currentTimeMillis()
+                        // sh 'npm run build'
+                        // def ngBuildTime = System.currentTimeMillis() - ngBuildStartTime
+                        // echo "ng build took ${ngBuildTime}ms"
                     }
                 }
             }
@@ -31,12 +31,12 @@ pipeline {
                         sh 'pnpm install'
                         sh 'npm install'
                         def pnpmInstallTime = System.currentTimeMillis() - pnpmInstallStartTime
-                        echo "npm install took ${pnpmInstallTime}ms"
+                        echo "pnpm install took ${pnpmInstallTime}ms"
 
-                        def ngBuildStartTime = System.currentTimeMillis()
-                        sh 'npm run build'
-                        def ngBuildTime = System.currentTimeMillis() - ngBuildStartTime
-                        echo "ng build took ${ngBuildTime}ms"
+                        // def ngBuildStartTime = System.currentTimeMillis()
+                        // sh 'npm run build'
+                        // def ngBuildTime = System.currentTimeMillis() - ngBuildStartTime
+                        // echo "ng build took ${ngBuildTime}ms"
                     }
                 }
             }
