@@ -29,8 +29,7 @@ pipeline {
                         def pnpmInstallStartTime = System.currentTimeMillis()
                         sh 'corepack enable'
                         sh 'corepack prepare pnpm@latest-9 --activate'
-                        sh 'pnpm install'
-                        sh 'npm install'
+                        sh 'pnpm install --no-frozen-lockfile'
                         def pnpmInstallTime = System.currentTimeMillis() - pnpmInstallStartTime
                         echo "pnpm install took ${pnpmInstallTime}ms"
 
