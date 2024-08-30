@@ -72,7 +72,8 @@
     "rimraf": "^3.0.2",
     "sockjs-client": "^1.6.1",
     "subsink": "^1.0.2",
-    "webpack-bundle-analyzer": "^4.9.1" 
+    "webpack-bundle-analyzer": "^4.9.1",
+    "angular/material": "17.3.10"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.0",
